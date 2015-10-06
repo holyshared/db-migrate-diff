@@ -10,3 +10,12 @@
  *      --config                    Location of the database.json file.             [default: "./database.json"]
  *      --migration-table           Set the name of the migration table.
  */
+
+var argv = require('minimist')(process.argv.slice(2));
+
+/*
+argv.env;
+argv.config;
+argv.migrationsDir;
+argv.migrationTable;
+*/
