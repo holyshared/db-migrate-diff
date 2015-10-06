@@ -1,0 +1,28 @@
+{
+  "name": "db-migrate-diff",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "bin": {
+    "db-migrate-diff": "./bin/db-migrate-diff"
+  },
+  "scripts": {
+    "test": ""
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/holyshared/db-migrate-diff.git"
+  },
+  "author": "Noritaka Horio <holy.shared.design@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/holyshared/db-migrate-diff/issues"
+  },
+  "homepage": "https://github.com/holyshared/db-migrate-diff",
+  "devDependencies": {
+    "db-migrate": "^0.9.23"
+  },
+  "dependencies": {
+    "minimist": "^1.2.0"
+  }
+}
