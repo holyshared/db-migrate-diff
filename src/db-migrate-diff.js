@@ -21,6 +21,7 @@ global.migrationTable = argv.migrationTable;
 Runner.fromArgv(argv).run().then((result) => {
   let reporter = new DefaultReporter();
   result.reportTo(reporter);
+  process.stdout.write('The difference detection was successful.\n');
   process.exit();
 }).catch((err) => {
   process.stderr.write(err.message);

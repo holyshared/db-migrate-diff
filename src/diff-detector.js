@@ -67,8 +67,25 @@ export class DiffResult {
       this.result[remote.name].remote = remote;
     }, this);
   }
-  get diff() {
+  get results() {
     return this.result;
+  }
+  get deletedDiff() {
+    let diffOnly = {};
+
+    Object.keys(this.results).forEach((key) => {
+      let diff = this.results[key];
+      // killed!!
+      if (diff.local.name === diff.remote.name) {
+        return;
+      }
+      diffOnly[key] = diff;
+    }, this);
+
+    return diffOnly;
+  }
+  get noDiffDeleted() {
+    return Object.keys(this.deletedDiff).length <= 0;
   }
   reportTo(reporter) {
     reporter.report(this);

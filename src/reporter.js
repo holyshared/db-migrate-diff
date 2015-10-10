@@ -8,16 +8,20 @@ export default class DefaultReporter {
     });
   }
   report(result) {
-    let diffRecords = result.diff;
+    if (result.noDiffDeleted) {
+      process.stdout.write('\nThe difference of migration was not detected.\n');
+      return;
+    }
+    let deletedDiff = result.deletedDiff;
 
-    Object.keys(diffRecords).forEach((name) => {
-      let diff = diffRecords[name];
+    Object.keys(deletedDiff).forEach((name) => {
+      let diff = deletedDiff[name];
       this.table.push([
         diff.local.name || '',
         diff.remote.name || ''
       ]);
     }, this);
 
-    process.stdout.write(this.table.toString());
+    process.stdout.write(this.table.toString() + '\n');
   }
 }
