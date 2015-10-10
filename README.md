@@ -21,7 +21,7 @@ You just run the following command.
 
 	db-migrate-diff [options]
 
-For example, if you want to detect the production environment and the difference is, you are in command of the street below.
+If you want to check the difference between the production environment, it will command such as the following.
 
 	db-migrate-diff -e production -m ./migrations --config ./database.json
 
