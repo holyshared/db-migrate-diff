@@ -1,4 +1,11 @@
 module.exports = {
+  development: {
+    "driver": "mysql",
+    host: 'localhost',
+    user: 'root',
+    password: 'password',
+    database: 'test'
+  },
   test: {
     "driver": "mysql",
     host: process.env.DB_HOSTNAME,
