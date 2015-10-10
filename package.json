@@ -22,8 +22,9 @@
   },
   "homepage": "https://github.com/holyshared/db-migrate-diff",
   "dependencies": {
-    "minimist": "^1.2.0",
-    "db-migrate": "^0.9.23"
+    "bluebird": "^2.10.2",
+    "db-migrate": "^0.9.23",
+    "minimist": "^1.2.0"
   },
   "devDependencies": {
     "babel": "^5.8.23",

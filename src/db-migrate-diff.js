@@ -9,26 +9,18 @@
  *      --migration-table           Set the name of the migration table.
  */
 
-import Argv from '../lib/argv';
-import { configLoader } from '../lib/config';
-import { connect } from 'db-migrate';
-import Migration from '../node_modules/db-migrate/lib/migration.js';
+import Argv from './argv';
+import Runner from './runner';
 
 let argv = Argv.fromArgv(process.argv.slice(2));
-let config = configLoader(argv.config, argv.env);
 
-// Hack for db-migrate
 global.matching = '';
 global.migrationTable = argv.migrationTable;
 
-connect(config.getCurrent().settings, (err, migrator) => {
-
-  // Load migration from local directory
-  Migration.loadFromFilesystem(argv.migrationsDir, (err, results) => {
-  });
-
-  // Load migration from database
-  Migration.loadFromDatabase(argv.migrationsDir, migrator.driver, (err, results) => {
-  });
-
+Runner.fromArgv(argv).run().then((results) => {
+  process.exit();
+}).catch((err) => {
+  process.stderr.write(err.message);
+  process.stderr.write(err.stack);
+  process.exit(1);
 });
