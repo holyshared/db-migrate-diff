@@ -11,13 +11,16 @@
 
 import Argv from './argv';
 import Runner from './runner';
+import DefaultReporter from './reporter';
 
 let argv = Argv.fromArgv(process.argv.slice(2));
 
 global.matching = '';
 global.migrationTable = argv.migrationTable;
 
-Runner.fromArgv(argv).run().then((results) => {
+Runner.fromArgv(argv).run().then((result) => {
+  let reporter = new DefaultReporter();
+  result.reportTo(reporter);
   process.exit();
 }).catch((err) => {
   process.stderr.write(err.message);

@@ -55,14 +55,17 @@ export class DiffResult {
     this.init();
   }
   init() {
+    let keys = [];
+    keys = keys.concat(this.local.map((item) => item.name));
+    keys = keys.concat(this.remote.map((item) => item.name));
+    keys.forEach((key) => { this.result[key] = { local: {}, remote: {} }; }, this);
+
     this.local.forEach((local) => {
-      this[local.name] = this[local.name] || { local: null };
-      this[local.name].local = local;
-    }, this.result);
+      this.result[local.name].local = local;
+    }, this);
     this.remote.forEach((remote) => {
-      this[remote.name] = this[remote.name] || { remote: null };
-      this[remote.name].remote = remote;
-    }, this.result);
+      this.result[remote.name].remote = remote;
+    }, this);
   }
   get diff() {
     return this.result;
