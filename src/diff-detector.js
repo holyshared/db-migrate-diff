@@ -38,9 +38,36 @@ export default class DiffDetector {
     return Promise.props({
       local: this.loadFromFilesystem(),
       remote: this.loadFromDatabase()
+    }).then((result) => {
+      return new DiffResult(result);
     });
   }
   static fromOptions(options) {
     return new DiffDetector(options);
+  }
+}
+
+export class DiffResult {
+  constructor(result) {
+    this.result = {};
+    this.local = result.local;
+    this.remote = result.remote;
+    this.init();
+  }
+  init() {
+    this.local.forEach((local) => {
+      this[local.name] = this[local.name] || { local: null };
+      this[local.name].local = local;
+    }, this.result);
+    this.remote.forEach((remote) => {
+      this[remote.name] = this[remote.name] || { remote: null };
+      this[remote.name].remote = remote;
+    }, this.result);
+  }
+  get diff() {
+    return this.result;
+  }
+  reportTo(reporter) {
+    reporter.report(this);
   }
 }
