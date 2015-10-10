@@ -4,6 +4,7 @@ db-migrate-diff
 Migration difference detection module for db-migrate.
 
 [![Build Status](https://travis-ci.org/holyshared/db-migrate-diff.svg?branch=master)](https://travis-ci.org/holyshared/db-migrate-diff)
+[![Dependency Status](https://www.versioneye.com/user/projects/5618dbc2a193340f280002c0/badge.svg?style=flat)](https://www.versioneye.com/user/projects/5618dbc2a193340f280002c0)
 
 ![https://raw.githubusercontent.com/holyshared/db-migrate-diff/master/screen-shot.png](https://raw.githubusercontent.com/holyshared/db-migrate-diff/master/screen-shot.png)
 
