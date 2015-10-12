@@ -1,7 +1,14 @@
 import Table from 'cli-table';
 
-export default class DefaultReporter {
+export class Reporter {
+  report(result) {
+    throw new Error('Please implement the report method');
+  }
+}
+
+export default class DefaultReporter extends Reporter {
   constructor() {
+    super();
     this.table = new Table({
       head: [ 'Local', 'Remote' ],
       colWidths: [ 40, 40 ]
