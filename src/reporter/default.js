@@ -1,17 +1,21 @@
 import Table from 'cli-table';
 import AbstractReporter from './abstract-reporter';
+import console from '../console';
 
 export default class DefaultReporter extends AbstractReporter {
   constructor() {
     super();
     this.table = new Table({
       head: [ 'Local', 'Remote' ],
-      colWidths: [ 40, 40 ]
+      colWidths: [ 40, 40 ],
+      style: {
+        head: [ 'white' ]
+      }
     });
   }
   report(result) {
     if (result.noDiffDeleted) {
-      process.stdout.write('\nThe difference of migration was not detected.\n');
+      console.info('The difference of migration was not detected.');
       return;
     }
     let detectedDiff = result.detectedDiff;
@@ -23,7 +27,6 @@ export default class DefaultReporter extends AbstractReporter {
         diff.remote.name || ''
       ]);
     }, this);
-
-    process.stdout.write(this.table.toString() + '\n');
+    console.log(this.table.toString());
   }
 }

@@ -12,6 +12,7 @@
 import Argv from './argv';
 import Runner from './runner';
 import registry from './reporter';
+import console from './console';
 
 let argv = Argv.fromArgv(process.argv.slice(2));
 
@@ -22,10 +23,10 @@ Runner.fromArgv(argv).run().then((result) => {
   let Reporter = registry.lookup(argv.reporter);
   result.reportTo(new Reporter());
 
-  process.stdout.write('The difference detection was successful.\n');
+  console.ok('The difference detection was successful.');
   process.exit();
 }).catch((err) => {
-  process.stderr.write(err.message);
-  process.stderr.write(err.stack);
+  console.error(err.message);
+  console.error(err.stack);
   process.exit(1);
 });
