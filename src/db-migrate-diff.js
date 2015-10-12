@@ -19,6 +19,14 @@ let argv = Argv.fromArgv(process.argv.slice(2));
 global.matching = '';
 global.migrationTable = argv.migrationTable;
 
+console.info('\n MIGRATIONS DIFF');
+console.info('────────────────────────────────────────');
+console.info(' environment: %s', argv.env);
+console.info('   directory: %s', argv.migrationsDir);
+console.info('       table: %s', argv.migrationTable);
+console.info('    reporter: %s', argv.reporter);
+console.info('');
+
 Runner.fromArgv(argv).run().then((result) => {
   let Reporter = registry.lookup(argv.reporter);
   result.reportTo(new Reporter());

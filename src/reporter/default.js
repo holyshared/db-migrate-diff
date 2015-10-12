@@ -31,6 +31,6 @@ export default class DefaultReporter extends AbstractReporter {
         basename(remoteFile)
       ]);
     }, this);
-    console.log(this.table.toString());
+    console.log(this.table.toString() + '\n');
   }
 }
