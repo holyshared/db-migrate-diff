@@ -1,4 +1,4 @@
-export default class ReporterRegistry {
+export class ReporterRegistry {
   constructor() {
     this.reporters = {};
   }
@@ -15,6 +15,8 @@ export default class ReporterRegistry {
     return this.reporters[name];
   }
 }
+
+export default ReporterRegistry;
 
 export class NotRegisteredError extends Error {
   constructor() {

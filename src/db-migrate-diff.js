@@ -11,7 +11,7 @@
 
 import Argv from './argv';
 import Runner from './runner';
-import DefaultReporter from './reporter';
+import registry from './reporter';
 
 let argv = Argv.fromArgv(process.argv.slice(2));
 
@@ -19,8 +19,9 @@ global.matching = '';
 global.migrationTable = argv.migrationTable;
 
 Runner.fromArgv(argv).run().then((result) => {
-  let reporter = new DefaultReporter();
-  result.reportTo(reporter);
+  let Reporter = registry.lookup(argv.reporter);
+  result.reportTo(new Reporter());
+
   process.stdout.write('The difference detection was successful.\n');
   process.exit();
 }).catch((err) => {
