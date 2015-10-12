@@ -1,12 +1,7 @@
 import Table from 'cli-table';
+import AbstractReporter from './abstract-reporter';
 
-export class Reporter {
-  report(result) {
-    throw new Error('Please implement the report method');
-  }
-}
-
-export default class DefaultReporter extends Reporter {
+export default class DefaultReporter extends AbstractReporter {
   constructor() {
     super();
     this.table = new Table({
