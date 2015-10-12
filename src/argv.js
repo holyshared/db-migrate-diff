@@ -7,11 +7,13 @@ export default class Argv {
         'env', 'e',
         'migrations-dir', 'm',
         'config',
-        'migration-table'
+        'migration-table',
+        'reporter', 'r'
       ],
       alias: {
         m: 'migrationsDir',
         e: 'env',
+        r: 'reporter',
         'migrations-dir': 'migrationsDir',
         'migration-table': 'migrationTable'
       },
@@ -19,7 +21,8 @@ export default class Argv {
         env: 'dev',
         config: process.cwd() + '/database.json',
         migrationsDir: './migrations',
-        migrationTable: 'migrations'
+        migrationTable: 'migrations',
+        reporter: 'default'
       }
     });
   }
@@ -34,6 +37,9 @@ export default class Argv {
   }
   get migrationTable() {
     return this.argv.migrationTable;
+  }
+  get reporter() {
+    return this.argv.reporter;
   }
   static fromArgv(argv) {
     return new Argv(argv);
