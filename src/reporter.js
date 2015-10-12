@@ -12,10 +12,10 @@ export default class DefaultReporter {
       process.stdout.write('\nThe difference of migration was not detected.\n');
       return;
     }
-    let deletedDiff = result.deletedDiff;
+    let detectedDiff = result.detectedDiff;
 
-    Object.keys(deletedDiff).forEach((name) => {
-      let diff = deletedDiff[name];
+    Object.keys(detectedDiff).forEach((name) => {
+      let diff = detectedDiff[name];
       this.table.push([
         diff.local.name || '',
         diff.remote.name || ''

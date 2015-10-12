@@ -70,7 +70,7 @@ export class DiffResult {
   get results() {
     return this.result;
   }
-  get deletedDiff() {
+  get detectedDiff() {
     let diffOnly = {};
 
     Object.keys(this.results).forEach((key) => {
@@ -85,7 +85,7 @@ export class DiffResult {
     return diffOnly;
   }
   get noDiffDeleted() {
-    return Object.keys(this.deletedDiff).length <= 0;
+    return Object.keys(this.detectedDiff).length <= 0;
   }
   reportTo(reporter) {
     reporter.report(this);
