@@ -9,6 +9,10 @@ export default {
     let template = chalk.magenta(format);
     console.log.apply(null, [ template ].concat(params));
   },
+  warn(format, ...params) {
+    let template = chalk.yellow(format);
+    console.log.apply(null, [ template ].concat(params));
+  },
   error(format, ...params) {
     let template = chalk.red(format);
     console.log.apply(null, [ template ].concat(params));
