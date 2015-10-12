@@ -7,7 +7,7 @@
     "db-migrate-diff": "./bin/db-migrate-diff"
   },
   "scripts": {
-    "test": "./node_modules/.bin/mocha test",
+    "test": "multi='dot=- mocha-lcov-reporter=lcov-report.lcov' ./node_modules/.bin/mocha test",
     "build": "./node_modules/.bin/babel -d lib -s inline src",
     "watch": "./node_modules/.bin/babel -d lib -s inline -w src"
   },
@@ -23,15 +23,26 @@
   "homepage": "https://github.com/holyshared/db-migrate-diff",
   "dependencies": {
     "bluebird": "^2.10.2",
+    "chalk": "^1.1.1",
     "cli-table": "^0.3.1",
     "db-migrate": "^0.9.23",
     "minimist": "^1.2.0"
   },
   "devDependencies": {
     "babel": "^5.8.23",
+    "blanket": "^1.1.7",
+    "codecov.io": "^0.1.6",
+    "coffee-script": "^1.10.0",
     "eslint": "^1.4.1",
     "mocha": "^2.3.3",
-    "power-assert": "^1.1.0",
-    "coffee-script": "^1.10.0"
+    "mocha-lcov-reporter": "^1.0.0",
+    "mocha-multi": "^0.7.2",
+    "power-assert": "^1.1.0"
+  },
+  "config": {
+    "blanket": {
+      "pattern": "/lib/",
+      "data-cover-never": "/node_modules/"
+    }
   }
 }
