@@ -9,6 +9,9 @@ export default class ReporterRegistry {
     this.reporters[name] = reporter;
   }
   lookup(name) {
+    if (!this.reporters[name]) {
+      throw new NotRegisteredError(name + ' is not registered');
+    }
     return this.reporters[name];
   }
 }

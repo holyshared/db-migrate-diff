@@ -5,8 +5,15 @@ describe 'ReporterRegistry', ->
   describe 'lookup', ->
     beforeEach ->
       @registry.register 'foo', {}
-    it 'returns registered reporter', ->
-      assert.ok @registry.lookup('foo') != null
+    context 'when already registered', ->
+      it 'returns registered reporter', ->
+        assert.ok @registry.lookup('foo') != null
+
+    context 'when not registered', ->
+      it 'throw NotRegisteredError error', ->
+        @block = () ->
+          @registry.lookup('bar')
+        assert.throws @block.bind this, NotRegisteredError
 
   describe 'register', ->
     context 'when already registered', ->
