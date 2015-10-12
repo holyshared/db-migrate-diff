@@ -10,5 +10,9 @@ abstractReporter = require '../lib/reporter/abstract-reporter'
 global.AbstractReporter = abstractReporter.default
 global.NotImplementedError = abstractReporter.NotImplementedError
 
+detector = require '../lib/diff-detector'
+global.DiffDetector = detector.default
+global.DiffResult = detector.DiffResult
+
 global.configLoader = require('../lib/config').configLoader 
 global.path = require 'path'
