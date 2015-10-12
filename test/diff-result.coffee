@@ -16,6 +16,7 @@ describe 'DiffResult', ->
         diffItem = detectedDiff['20150823134615-groups']
         assert.ok diffItem.local.name == '20150823134615-groups'
         assert.ok Object.keys(diffItem.remote).length <= 0
+        assert.ok  @result.noDiffDeleted == false
 
     context 'when applied migration is not in the local', ->
       beforeEach ->
@@ -33,6 +34,7 @@ describe 'DiffResult', ->
         diffItem = detectedDiff['20150823134615-groups']
         assert.ok Object.keys(diffItem.local).length <= 0
         assert.ok diffItem.remote.name == '20150823134615-groups'
+        assert.ok  @result.noDiffDeleted == false
 
     context 'when new migration to the local', ->
       beforeEach ->
@@ -53,3 +55,4 @@ describe 'DiffResult', ->
       it 'returns no diff', ->
         detectedDiff = @result.detectedDiff
         assert.ok Object.keys(detectedDiff).length <= 0
+        assert.ok  @result.noDiffDeleted
