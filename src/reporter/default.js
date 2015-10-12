@@ -1,6 +1,7 @@
 import Table from 'cli-table';
 import AbstractReporter from './abstract-reporter';
 import console from '../console';
+import { basename } from 'path';
 
 export default class DefaultReporter extends AbstractReporter {
   constructor() {
@@ -22,9 +23,12 @@ export default class DefaultReporter extends AbstractReporter {
 
     Object.keys(detectedDiff).forEach((name) => {
       let diff = detectedDiff[name];
+      let localFile = diff.local.path || '';
+      let remoteFile = diff.remote.path || '';
+
       this.table.push([
-        diff.local.name || '',
-        diff.remote.name || ''
+        basename(localFile),
+        basename(remoteFile)
       ]);
     }, this);
     console.log(this.table.toString());
