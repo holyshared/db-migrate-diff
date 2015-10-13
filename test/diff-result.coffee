@@ -69,5 +69,5 @@ describe 'DiffResult', ->
         ]
       @result = new DiffResult @options
     it 'returns ghosts diff', ->
-      assert.ok  @result.ghosts.length >= 0
+      assert.ok  @result.hasGhosts
       assert.ok  @result.ghosts[0].name == '20150823134615-groups'

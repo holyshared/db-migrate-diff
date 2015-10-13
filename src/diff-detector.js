@@ -98,6 +98,9 @@ export class DiffResult {
     });
     return ghostDiff;
   }
+  get hasGhosts() {
+    return this.ghosts.length >= 0;
+  }
   get noDiffDeleted() {
     return Object.keys(this.detectedDiff).length <= 0;
   }
