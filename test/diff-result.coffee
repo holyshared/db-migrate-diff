@@ -6,7 +6,7 @@ describe 'DiffResult', ->
           local: [{
             name: '20150823134615-groups'
             path: __dirname + '/fixtures/migrations/20150825015059-groups.coffee'
-            date: new Date,
+            date: new Date
             title: 'groups'
           }]
           remote: []
@@ -25,7 +25,7 @@ describe 'DiffResult', ->
           remote: [{
             name: '20150823134615-groups'
             path: __dirname + '/fixtures/migrations/20150825015059-groups.coffee'
-            date: new Date,
+            date: new Date
             title: 'groups'
           }]
         @result = new DiffResult @options
@@ -42,13 +42,13 @@ describe 'DiffResult', ->
           local: [{
             name: '20150823134615-groups'
             path: __dirname + '/fixtures/migrations/20150825015059-groups.coffee'
-            date: new Date,
+            date: new Date
             title: 'groups'
           }]
           remote: [{
             name: '20150823134615-groups'
             path: __dirname + '/fixtures/migrations/20150825015059-groups.coffee'
-            date: new Date,
+            date: new Date
             title: 'groups'
           }]
         @result = new DiffResult @options
@@ -56,3 +56,18 @@ describe 'DiffResult', ->
         detectedDiff = @result.detectedDiff
         assert.ok Object.keys(detectedDiff).length <= 0
         assert.ok  @result.noDiffDeleted
+
+  describe 'ghosts', ->
+    beforeEach ->
+      @options =
+        local: []
+        remote: [
+          name: '20150823134615-groups'
+          path: __dirname + '/fixtures/migrations/20150825015059-groups.coffee'
+          date: new Date
+          title: 'groups'
+        ]
+      @result = new DiffResult @options
+    it 'returns ghosts diff', ->
+      assert.ok  @result.hasGhosts
+      assert.ok  @result.ghosts[0].name == '20150823134615-groups'
