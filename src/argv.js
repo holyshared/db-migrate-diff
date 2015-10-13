@@ -7,11 +7,12 @@ export default class Argv {
         'env', 'e',
         'migrations-dir', 'm',
         'config',
-        'migration-table',
+        'migration-table', 't',
         'reporter', 'r'
       ],
       alias: {
         m: 'migrationsDir',
+        t: 'migrationTable',
         e: 'env',
         r: 'reporter',
         'migrations-dir': 'migrationsDir',
