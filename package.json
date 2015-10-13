@@ -29,12 +29,14 @@
     "minimist": "^1.2.0"
   },
   "devDependencies": {
-    "db-migrate": "^0.9.23",
     "babel": "^5.8.23",
     "blanket": "^1.1.7",
     "codecov.io": "^0.1.6",
     "coffee-script": "^1.10.0",
+    "db-migrate": "^0.9.23",
     "eslint": "^1.4.1",
+    "espower-loader": "^1.0.0",
+    "intelli-espower-loader": "^1.0.0",
     "mocha": "^2.3.3",
     "mocha-lcov-reporter": "^1.0.0",
     "mocha-multi": "^0.7.2",
