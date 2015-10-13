@@ -1,7 +1,7 @@
 import { configLoader } from './config';
 import { connect } from 'db-migrate';
 import Promise from 'bluebird';
-import migration from '../node_modules/db-migrate/lib/migration.js';
+import migration from 'db-migrate/lib/migration.js';
 import { forIn } from 'lodash';
 
 export default class DiffDetector {
