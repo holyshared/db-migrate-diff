@@ -28,7 +28,10 @@ If you want to check the difference between the production environment, it will 
 	db-migrate-diff -e production -m ./migrations --config ./database.json
 
 ### Command line options
-* --env, -e  The environment to run the migrations under. [default: "dev"]
-* --migrations-dir, -m        The directory containing your migration files.  [default: "./migrations"]
-* --config                    Location of the database.json file.             [default: "./database.json"]
-* --migration-table           Set the name of the migration table.
+* **--env, -e** The environment to run the migrations under. [default: "dev"]
+* **--migrations-dir, -m** The directory containing your migration files.  [default: "./migrations"]
+* **--config** Location of the database.json file.             [default: "./database.json"]
+* **--migration-table** Set the name of the migration table.
+* **--reporter, -r** Reporter of the difference
+	* default - Display the differences of migration.
+	* ghost - Display the migration that does not exist.
