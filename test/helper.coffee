@@ -1,5 +1,5 @@
 global.assert = require 'power-assert'
-global.Argv = require '../lib/argv'
+global.Argv = require('../lib/argv').default
 
 registry = require '../lib/reporter/registry'
 global.ReporterRegistry = registry.default
@@ -14,5 +14,5 @@ detector = require '../lib/diff-detector'
 global.DiffDetector = detector.default
 global.DiffResult = detector.DiffResult
 
-global.configLoader = require('../lib/config').configLoader 
+global.configLoader = require('../lib/config').configLoader
 global.path = require 'path'
