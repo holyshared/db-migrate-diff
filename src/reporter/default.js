@@ -1,3 +1,5 @@
+'use strict';
+
 import Table from 'cli-table';
 import AbstractReporter from './abstract-reporter';
 import console from '../console';
