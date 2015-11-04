@@ -1,3 +1,5 @@
+'use strict';
+
 import AbstractReporter from './abstract-reporter';
 import console from '../console';
 import { basename } from 'path';

@@ -1,3 +1,5 @@
+'use strict';
+
 export default class AbstractReporter {
   report(result) {
     throw new NotImplementedError('Please implement the report method');

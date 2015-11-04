@@ -1,4 +1,6 @@
-import chalk from 'chalk'; 
+'use strict';
+
+import chalk from 'chalk';
 
 export default {
   ok(format, ...params) {

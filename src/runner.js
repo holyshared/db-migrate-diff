@@ -1,3 +1,5 @@
+'use strict';
+
 import { configLoader } from '../lib/config';
 import { connect } from 'db-migrate';
 import DiffDetector from './diff-detector';
