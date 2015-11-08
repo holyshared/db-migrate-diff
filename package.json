@@ -2,7 +2,11 @@
   "name": "db-migrate-diff",
   "version": "0.3.0",
   "description": "Migration difference detection module for db-migrate",
-  "main": "index.js",
+  "main": "lib/db-migrate-diff.js",
+  "files": [
+    "lib/**/*.js",
+    "README.md"
+  ],
   "bin": {
     "db-migrate-diff": "./bin/db-migrate-diff"
   },
