@@ -10,3 +10,4 @@ script:
   - npm test
 after_success:
   - cat lcov-report.lcov | ./node_modules/.bin/codecov
+sudo: false
