@@ -2,9 +2,9 @@ module.exports = {
   development: {
     "driver": "mysql",
     host: 'localhost',
-    user: 'root',
-    password: 'password',
-    database: 'test'
+    user: 'dbmigrate',
+    password: 'dbmigrate',
+    database: 'dbmigrate'
   },
   test: {
     "driver": "mysql",
