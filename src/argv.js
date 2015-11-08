@@ -1,5 +1,3 @@
-'use strict';
-
 import argvParser from 'minimist';
 
 export default class Argv {
