@@ -6,8 +6,12 @@ node_js:
   - "0.11"
   - "4"
   - "5"
+services:
+  - mysql
+before_script:
+  - mysql -e "create database IF NOT EXISTS dbmigrate;" -uroot
+  - mysql -Ddbmigrate -uroot < test/fixtures/travis.sql
 script:
   - npm test
 after_success:
   - cat lcov-report.lcov | ./node_modules/.bin/codecov
-sudo: false
