@@ -35,3 +35,16 @@ If you want to check the difference between the production environment, it will 
 * **--reporter, -r** Reporter of the difference
 	* default - Display the differences of migration.
 	* ghost - Display the migration that does not exist.
+
+
+Tests
+--------------------------------------
+
+Create a database for unit test.
+
+	CREATE DATABASE knex CHARACTER SET = utf8;
+
+Run the test.
+
+	npm install
+	npm test
