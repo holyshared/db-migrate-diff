@@ -1,5 +1,3 @@
-'use strict';
-
 import DefaultReporter from './default';
 import GhostReporter from './ghost';
 import { ReporterRegistry, NotRegisteredError, AlreadyRegisteredError } from './registry';

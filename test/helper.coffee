@@ -1,5 +1,6 @@
 global.assert = require 'power-assert'
 global.Argv = require('../lib/argv').default
+global.Promsie = require('bluebird')
 
 registry = require '../lib/reporter/registry'
 global.ReporterRegistry = registry.default
@@ -16,3 +17,4 @@ global.DiffResult = detector.DiffResult
 
 global.configLoader = require('../lib/config').configLoader
 global.path = require 'path'
+global.fork = require('child_process').fork

@@ -9,8 +9,6 @@
  *      --migration-table           Set the name of the migration table.
  */
 
-'use strict';
-
 import Argv from './argv';
 import Runner from './runner';
 import registry from './reporter';

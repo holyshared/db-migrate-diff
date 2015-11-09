@@ -1,5 +1,3 @@
-'use strict';
-
 import { configLoader } from './config';
 import { connect } from 'db-migrate';
 import Promise from 'bluebird';
