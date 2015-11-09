@@ -42,7 +42,7 @@ Tests
 
 Create a database for unit test.
 
-	CREATE DATABASE knex CHARACTER SET = utf8;
+	CREATE DATABASE dbmigrate CHARACTER SET = utf8;
 
 Run the test.
 
