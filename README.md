@@ -6,7 +6,7 @@ Migration difference detection module for db-migrate.
 [![npm version](https://badge.fury.io/js/db-migrate-diff.svg)](http://badge.fury.io/js/db-migrate-diff)
 [![Build Status](https://travis-ci.org/holyshared/db-migrate-diff.svg?branch=master)](https://travis-ci.org/holyshared/db-migrate-diff)
 [![codecov.io](http://codecov.io/github/holyshared/db-migrate-diff/coverage.svg?branch=master)](http://codecov.io/github/holyshared/db-migrate-diff?branch=master)
-[![devDependency Status](https://david-dm.org/holyshared/db-migrate-diff/dev-status.svg)](https://david-dm.org/holyshared/db-migrate-diff#info=devDependencies)
+[![Dependency Status](https://david-dm.org/holyshared/db-migrate-diff.svg)](https://david-dm.org/holyshared/db-migrate-diff)
 
 ![https://raw.githubusercontent.com/holyshared/db-migrate-diff/master/screen-shot.png](https://raw.githubusercontent.com/holyshared/db-migrate-diff/master/screen-shot.png)
 
