@@ -1,7 +1,8 @@
 import { configLoader } from './config';
 import { connect } from 'db-migrate';
 import Promise from 'bluebird';
-import migration from '../node_modules/db-migrate/lib/migration.js';
+import migration from 'db-migrate/lib/migration.js';
+import { forIn } from 'lodash';
 
 export default class DiffDetector {
   constructor(options) {
@@ -83,6 +84,22 @@ export class DiffResult {
     }, this);
 
     return diffOnly;
+  }
+  get ghosts() {
+    let ghostDiff = [];
+
+    forIn(this.detectedDiff, function(diff, key) {
+      let localFile = diff.local.path || null;
+      let remoteFile = diff.remote.path || '';
+
+      if (localFile === null && remoteFile) {
+        ghostDiff.push(diff.remote);
+      }
+    });
+    return ghostDiff;
+  }
+  get hasGhosts() {
+    return this.ghosts.length >= 0;
   }
   get noDiffDeleted() {
     return Object.keys(this.detectedDiff).length <= 0;

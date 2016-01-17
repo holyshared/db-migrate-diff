@@ -25,7 +25,7 @@ describe 'Argv', ->
           '--config', 'database.js',
           '-e', 'dev',
           '-m', './migrations',
-          '--migration-table', 'migrations',
+          '-t', 'migrations',
           '-r', 'test'
         ]
       it 'returns an instance of applying the short option', ->

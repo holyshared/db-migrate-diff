@@ -1,4 +1,3 @@
-//import Table from 'cli-table';
 import AbstractReporter from './abstract-reporter';
 import console from '../console';
 import { basename } from 'path';
@@ -6,16 +5,6 @@ import { basename } from 'path';
 export default class GhostReporter extends AbstractReporter {
   constructor() {
     super();
-
-/*
-    this.table = new Table({
-      head: [ 'Local', 'Remote' ],
-      colWidths: [ 40, 40 ],
-      style: {
-        head: [ 'white' ]
-      }
-    });
-    */
   }
   report(result) {
     if (result.noDiffDeleted) {
