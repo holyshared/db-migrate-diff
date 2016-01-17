@@ -13,4 +13,4 @@ before_script:
 script:
   - npm test
 after_success:
-  - cat lcov-report.lcov | ./node_modules/.bin/codecov
+  - cat coverage/lcov.info | ./node_modules/.bin/codecov
